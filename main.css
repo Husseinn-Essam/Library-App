@@ -1,0 +1,145 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #f0eef1;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+}
+.modal-content h2 {
+  align-self: center;
+}
+.modal-content .check {
+  display: flex;
+  align-self: center;
+  gap: 5px;
+}
+.modal-content input[type=text], .modal-content input[type=number] {
+  width: 200px;
+  align-self: center;
+  font-size: 1.2rem;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-content button {
+  width: 150px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  color: white;
+  background: #0284c7;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.modal-content button:hover {
+  opacity: 0.7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  width: 100%;
+  padding: 10px;
+  font-size: 3rem;
+  background-color: white;
+}
+.header h1 {
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #cbd5e1;
+  justify-content: center;
+  align-items: center;
+}
+.container button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #cbd5e1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.card {
+  background-color: white;
+  grid-column: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.card .title {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 1.3rem;
+  padding: 20px;
+  height: 80%;
+}
+.card .actions {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+}
+.card .actions button {
+  width: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+}
+.card .actions button:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.card .actions .read {
+  background: #15803d;
+  color: white;
+  border-radius: 0px 0px 0px 10px;
+}
+.card .actions .remove {
+  background: rgb(175, 58, 58);
+  color: white;
+  border-radius: 0px 0px 10px 0px;
+}/*# sourceMappingURL=main.css.map */
