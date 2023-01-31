@@ -41,7 +41,7 @@ function drawOnScreen(book) {
     title.textContent = book.title;
     author.textContent = `Author : ${book.author}`;
     pages.textContent = `Pages : ${book.pages}`;
-    read.textContent = seen.textContent == 'Completed' ? 'Set Not read' : 'Set as Read';
+    read.textContent = seen.textContent == book.status == false ? 'Set Not read' : 'Set as Read';
     remove.textContent = 'Remove';
     
     content.appendChild(card);
