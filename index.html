@@ -30,8 +30,9 @@
       </div>
     </div>
     <div class="modal">
-      <div class="modal-content">
+      <form class="modal-content">
         <h2>Add new book</h2>
+
         <input
           type="text"
           name="title"
@@ -39,27 +40,15 @@
           placeholder="Title"
           required
         />
-        <input
-          type="text"
-          name="author"
-          id="author"
-          placeholder="Author"
-          required
-        />
-        <input
-          type="number"
-          name="pages"
-          id="pages"
-          placeholder="Pages"
-          required
-        />
+        <input type="text" name="author" id="author" placeholder="Author" />
+        <input type="number" name="pages" id="pages" placeholder="Pages" />
         <div class="check">
           <label for="seen">Have you read it?</label>
           <input type="checkbox" name="seen" id="seen" />
         </div>
 
         <button class="book-sub">Add</button>
-      </div>
+      </form>
     </div>
     <script src="./app.js"></script>
   </body>

@@ -65,6 +65,7 @@
   width: 100%;
   padding: 10px;
   font-size: 3rem;
+  font-weight: 700;
   background-color: white;
 }
 .header h1 {
@@ -86,6 +87,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+.container button:hover {
+  color: #0284c7;
+}
 
 .content {
   width: 90vw;
@@ -99,7 +103,7 @@
 
 .card {
   background-color: white;
-  height: 300px;
+  height: fit-content;
   font-size: 1.6rem;
   align-items: center;
   overflow: auto;
@@ -109,11 +113,16 @@
   flex-direction: column;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+.card hr {
+  width: 100%;
+}
 .card .title {
   font-size: 2rem;
+  font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px;
 }
 .card .info {
   display: flex;
@@ -132,6 +141,7 @@
 .card .actions button {
   width: 50%;
   font-size: 1.2rem;
+  height: 3rem;
   cursor: pointer;
   border: none;
 }
