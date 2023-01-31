@@ -2,17 +2,16 @@ const addBook = document.querySelector(".add");
 const modalContent = document.querySelector(".modal-content");
 const modalOverlay = document.querySelector(".modal");
 const content = document.querySelector(".content");
-//let bookTitle = document.querySelector("#title").value;
 const subBook = document.querySelector(".book-sub");
 let myLibrary = [];
 
 //submit book info
 subBook.addEventListener("click", () => {
-  let bookTitle = document.querySelector("#title").value;
-  let bookAuthor = document.querySelector("#author").value;
-  let bookPages = document.querySelector("#pages").value;
-  let bookStatus = document.querySelector("#seen").checked;
-  let mybook = new book(bookTitle, bookAuthor, bookPages, bookStatus);
+  const bookTitle = document.querySelector("#title").value;
+  const bookAuthor = document.querySelector("#author").value;
+  const bookPages = document.querySelector("#pages").value;
+  const bookStatus = document.querySelector("#seen").checked;
+  const mybook = new book(bookTitle, bookAuthor, bookPages, bookStatus);
   addToLib(mybook);
   drawOnScreen(mybook);
 });
@@ -52,14 +51,31 @@ function drawOnScreen(book) {
   card.appendChild(actions);
   const read = document.createElement("button");
   read.classList.add("read");
-  read.textContent = "Read";
+  read.textContent =
+    seen.textContent == "Completed" ? "Set Not read" : "Set as Read";
   actions.appendChild(read);
   const remove = document.createElement("button");
   remove.classList.add("remove");
   remove.textContent = "Remove";
   actions.appendChild(remove);
-}
 
+  //change read status
+  read.addEventListener("click", () => {
+    if (read.textContent == "Set Not read") {
+      seen.textContent = "not completed";
+      read.textContent = "Set as Read";
+    } else {
+      seen.textContent = "Completed";
+      read.textContent = "Set Not read";
+    }
+  });
+
+  //remove card
+  remove.addEventListener("click", () => {
+    content.removeChild(card);
+  });
+}
+//Book object constructor
 function book(title, author, pages, status) {
   this.title = title;
   this.author = author;
