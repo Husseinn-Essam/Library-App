@@ -9,28 +9,62 @@ let myLibrary = [];
 //submit book info
 subBook.addEventListener("click", () => {
   let bookTitle = document.querySelector("#title").value;
-  mybook = new book(bookTitle);
+  let bookAuthor = document.querySelector("#author").value;
+  let bookPages = document.querySelector("#pages").value;
+  let bookStatus = document.querySelector("#seen").checked;
+  let mybook = new book(bookTitle, bookAuthor, bookPages, bookStatus);
   addToLib(mybook);
-  drawOnScreen(myLibrary);
+  drawOnScreen(mybook);
 });
 //add book to lib
 function addToLib(mybook) {
   myLibrary.push(mybook);
 }
 //draw book on screen
-function drawOnScreen(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    content.appendChild(card);
+function drawOnScreen(book) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  content.appendChild(card);
+  const title = document.createElement("div");
+  title.textContent = book.title;
+  title.classList.add("title");
+  card.appendChild(title);
+  const divider = document.createElement("hr");
+  card.appendChild(divider);
+  const info = document.createElement("div");
+  info.classList.add("info");
+  card.appendChild(info);
+  const author = document.createElement("div");
+  author.textContent = `Author : ${book.author}`;
+  info.appendChild(author);
+  const pages = document.createElement("div");
+  pages.textContent = `Pages : ${book.pages}`;
+  info.appendChild(pages);
+  const seen = document.createElement("div");
+  if (book.status == true) {
+    seen.textContent = "Completed";
+  } else {
+    seen.textContent = "Not Completed";
   }
+  info.appendChild(seen);
+  const actions = document.createElement("div");
+  actions.classList.add("actions");
+  card.appendChild(actions);
+  const read = document.createElement("button");
+  read.classList.add("read");
+  read.textContent = "Read";
+  actions.appendChild(read);
+  const remove = document.createElement("button");
+  remove.classList.add("remove");
+  remove.textContent = "Remove";
+  actions.appendChild(remove);
 }
 
-function book(title) {
+function book(title, author, pages, status) {
   this.title = title;
-  //   this.author = author;
-  //   this.pages = pages;
-  //   this.status = status;
+  this.author = author;
+  this.pages = pages;
+  this.status = status;
 }
 
 //Add book event
